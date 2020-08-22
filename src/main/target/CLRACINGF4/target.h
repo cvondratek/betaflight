@@ -83,9 +83,10 @@
 #define UART1_RX_PIN            PA10
 #define UART1_TX_PIN            PA9
 
-#define USE_UART3
-#define UART3_RX_PIN            PB11
-#define UART3_TX_PIN            PB10
+//hijack uart3 for i2c, below
+//#define USE_UART3
+//#define UART3_RX_PIN            PB11
+//#define UART3_TX_PIN            PB10
 
 #define USE_UART6
 #define UART6_RX_PIN            PC7
@@ -141,3 +142,26 @@
 
 #define USABLE_TIMER_CHANNEL_COUNT 7
 #define USED_TIMERS  (  TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(4) | TIM_N(8) | TIM_N(11))
+
+////////////////////////////////////////////////////
+// enale i2c dev #2 (disables UART3, above)
+#define USE_I2C
+
+#define USE_I2C_DEVICE_2
+#define I2C_DEVICE_2            (I2CDEV_2)
+#define I2C2_SCL                PB10
+#define I2C2_SDA                PB11
+
+#define BARO_I2C_INSTANCE	(I2CDEV_2)
+#define USE_BARO
+#define USE_BARO_BMP280
+#define USE_BARO_MS5611
+#define USE_BARO_BMP085
+
+#define MAG_I2C_INSTANCE        (I2CDEV_2)
+#define USE_MAG
+#define USE_MAG_HMC5883
+#define USE_MAG_QMC5883
+#define USE_MAG_LIS3MDL
+//////////////////////////////////////////////////////
+
