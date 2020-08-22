@@ -47,7 +47,7 @@
 void targetConfiguration(void)
 {
     pinioBoxConfigMutable()->permanentId[0] = 40;
-    motorConfigMutable()->dev.motorPwmProtocol = PWM_TYPE_DSHOT600;
-    pidConfigMutable()->pid_process_denom = 1; // 8kHz PID
+    motorConfigMutable()->dev.motorPwmProtocol = PWM_TYPE_DSHOT300;
+    pidConfigMutable()->pid_process_denom = 2; // 8kHz PID
 }
 #endif
